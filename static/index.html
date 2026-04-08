@@ -50,20 +50,8 @@
                 <div id="gallery-view" class="container-fluid d-none">
                     <div class="row h-100">
                         <div class="col-md-3 no-padding-left pt-md-5" id="mobile-list-container">
-                            <ul class="gallery-list list-unstyled">
-                                <li class="gallery-item" data-index="0"
-                                    data-images="image/image_1.jpg|image/image_2.jpg|image/image_3.jpg"
-                                    data-title="mother i need to dsnjknsdckshn" data-meta="Hard fired porcelain, 2023"
-                                    data-desc="Description for project one...">
-                                    <span class="g-num">01</span>
-                                    <span class="g-title">mother i need to dsnjknsdckshn</span>
-                                </li>
-                                <li class="gallery-item" data-index="1"
-                                    data-images="image/image_1.jpg|image/image_2.jpg" data-title="once upon a playroom"
-                                    data-meta="Mixed media, 2023" data-desc="Description for project two.">
-                                    <span class="g-num">02</span>
-                                    <span class="g-title">once upon a playroom</span>
-                                </li>
+                            <ul class="gallery-list list-unstyled" id="gallery-items-list">
+                                <!-- Dynamic Projects Load Here -->
                             </ul>
                         </div>
 
@@ -80,25 +68,15 @@
 
                             <div class="display-box w-100">
                                 <div class="bg-gray-box">
-                                    <img src="image/image_1.jpg" alt="Artwork" class="img-fluid" id="main-gallery-img">
+                                    <img src="" alt="Artwork" class="img-fluid d-none" id="main-gallery-img">
                                     <div id="gallery-text-content" class="d-none text-start p-2">
                                         <h4 class="fw-bold text-uppercase mb-4 d-none-mobile-text" id="text-title">
-                                            ONCE UPON A PLAYROOM</h4>
+                                            PROJECT TITLE</h4>
                                         <div class="metadata mb-4">
-                                            <p class="mb-0">Once upon a playroom</p>
-                                            <p class="mb-0">Hard fired porcelain, wood and silk thread.</p>
-                                            <p class="mb-0">3 × 3.5 × 6.5 inches</p>
+                                            <!-- Dynamic Metadata Load Here -->
                                         </div>
                                         <p class="description-body" id="display-desc">
-                                            This work traces back to the attics in my maternal ancestral home, where as
-                                            a child my discoveries were beyond my comprehension. Only that you had to
-                                            tread carefully because of mud and wood floor under your feet and copper
-                                            vessels of secrets and palm leaves with stranger inscriptions.
-                                            They say an artist shouldn’t romanticise materiality and rather focus on the
-                                            idea/concept. However to understand material has its own exhilarating
-                                            beauty. @edmunddewaal was my window into porcelain and the beauty of its
-                                            quiet transformative presence. And it’s ability distill emotions to
-                                            precision.
+                                            <!-- Dynamic Description Load Here -->
                                         </p>
                                     </div>
                                 </div>
@@ -119,9 +97,9 @@
             <div class="row align-items-end">
                 <div class="col-4"></div>
                 <div class="col-4 d-flex justify-content-center gap-4">
-                    <div class="nav-item"><a href="#" id="show-art">art</a></div>
-                    <div class="nav-item"><a href="#">books</a></div>
-                    <div class="nav-item"><a href="#">design</a></div>
+                    <div class="nav-item"><a href="#" id="show-art" class="category-trigger" data-category="art">art</a></div>
+                    <div class="nav-item"><a href="#" id="show-books" class="category-trigger" data-category="books">books</a></div>
+                    <div class="nav-item"><a href="#" id="show-design" class="category-trigger" data-category="design">design</a></div>
                 </div>
                 <div class="col-4 text-end contact-mobile-view">
                     <div class="nav-item"><a href="#" class="open-contact-btn">contact</a></div>
@@ -141,18 +119,12 @@
         </div>
         <div class="panel-body">
             <div class="about-image-container mb-4">
-                <img src="image/about_img.jpg" alt="About" class="img-fluid filter-bw">
+                <img src="" alt="About" class="img-fluid filter-bw" id="about-img">
             </div>
             <div class="about-text mt-5">
-                <p class="mb-4">Sheetal’s work is rooted in her poetry which explores the evolution and intricacies of
-                    human relationships within the urban landscape...</p>
+                <p class="mb-4" id="about-intro"></p>
                 <p>
-                    Her first art project, Air Poetry was an Augmented Reality based application<span
-                        id="dots">...</span>
-                    <span id="more-content" style="display: none;">
-                        ‘For me imbibing minimalism in my work is a way of behavioural edit... She lives between Mumbai
-                        and Kochi, while working towards her next work Bodies in a City Song.
-                    </span>
+                    <span id="about-more-span" style="display: none;"></span>
                 </p>
                 <a href="javascript:void(0)" id="read-more-trigger" class="read-more-btn">Read more</a>
             </div>
@@ -160,42 +132,9 @@
 
             <div class="press-section mt-5 pt-4">
                 <h5 class="press-header">PRESS</h5>
-
-                <a href="#" class="press-sec">
-                    <div class="press-item">
-                        <p class="press-source">GQ India</p>
-                        <p class="press-content">In Kerala, Bose Krishnamachari unveils “Lokame Tharavadu” with 267
-                            artistsTo and one timely message</p>
-                    </div>
-                </a>
-                <!-- Press Item 2 -->
-                <a href="#" class="press-sec">
-                    <div class="press-item">
-                        <p class="press-source">New Indian Express</p>
-                        <p class="press-content">Augmenting an argumentative reality</p>
-                    </div>
-                </a>
-                <!-- Press Item 3 -->
-                <a href="#" class="press-sec">
-                    <div class="press-item">
-                        <p class="press-source">The Hindu</p>
-                        <p class="press-content">This Augmented Reality app leverages poetry to spread the love</p>
-                    </div>
-                </a>
-                <!-- Press Item 4 -->
-                <a href="#" class="press-sec">
-                    <div class="press-item">
-                        <p class="press-source">New Indian Express</p>
-                        <p class="press-content">A physical manifestation of poetry</p>
-                    </div>
-                </a>
-                <!-- Press Item 5 -->
-                <a href="#" class="press-sec">
-                    <div class="press-item">
-                        <p class="press-source">DT Next</p>
-                        <p class="press-content">Protest gets poetic touch with this app</p>
-                    </div>
-                </a>
+                <div id="press-list">
+                    <!-- Dynamic Press Items Load Here -->
+                </div>
             </div>
         </div>
     </div>
@@ -210,11 +149,11 @@
             </div>
         </div>
         <div class="contact-email-row">
-            <a href="mailto:sheetals.5544@gmail.com" class="contact-link">sheetals.5544@gmail.com</a>
+            <a href="" class="contact-link" id="contact-email"></a>
         </div>
         <div class="contact-insta-row mt-3 d-flex align-items-center">
             <i class="fa-brands fa-instagram me-2"></i>
-            <a href="https://instagram.com/sheetal_si" target="_blank" class="contact-link">sheetal_si</a>
+            <a href="" target="_blank" class="contact-link" id="contact-insta"></a>
         </div>
         <div class="d-flex justify-content-end mt-4" id="contact-mobile-text">
             <span class="fw-bold text-black contact-text">contact</span>
@@ -226,6 +165,7 @@
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/main.js"></script>
 </body>
 
