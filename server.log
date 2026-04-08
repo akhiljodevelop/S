@@ -18,3 +18,11 @@
 127.0.0.1 - - [08/Apr/2026 07:44:15] "GET /image/loader.mp4 HTTP/1.1" 200 -
 127.0.0.1 - - [08/Apr/2026 07:44:16] "GET /image/about_img.jpg HTTP/1.1" 200 -
 127.0.0.1 - - [08/Apr/2026 07:44:25] "GET /image/image_1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [08/Apr/2026 07:50:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Apr/2026 07:50:23] "GET /css/bootstrap.min.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Apr/2026 07:50:23] "GET /css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Apr/2026 07:50:23] "GET /js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [08/Apr/2026 07:50:24] "GET /image/loader.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [08/Apr/2026 07:50:25] "GET /image/about_img.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [08/Apr/2026 07:50:30] "GET /image/image_2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [08/Apr/2026 07:50:31] "GET /image/image_1.jpg HTTP/1.1" 200 -
