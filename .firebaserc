@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "sheetal-s"
+  },
+  "targets": {
+    "sheetal-s": {
+      "hosting": {
+        "website": [
+          "sheetal-s"
+        ],
+        "admin": [
+          "sheetal-s-admin"
+        ]
+      }
+    }
   }
 }

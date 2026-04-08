@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "site": "sheetal-s",
+      "target": "website",
       "public": "static",
       "ignore": [
         "firebase.json",
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "site": "sheetal-s-admin",
+      "target": "admin",
       "public": "admin_dashboard/build/web",
       "ignore": [
         "firebase.json",
