@@ -80,8 +80,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               const Text('About Section', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
-              TextField(controller: _introController, decoration: const InputDecoration(labelText: 'Intro Text'), maxLines: 2),
-              TextField(controller: _moreController, decoration: const InputDecoration(labelText: 'More About Text'), maxLines: 4),
+              TextField(controller: _introController, decoration: const InputDecoration(labelText: 'Intro Text'), maxLines: 4),
+              TextField(controller: _moreController, decoration: const InputDecoration(labelText: 'More About Text'), maxLines: 8),
               TextField(controller: _imageController, decoration: const InputDecoration(labelText: 'About Image URL')),
               const SizedBox(height: 32),
               const Text('Contact & Social', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
