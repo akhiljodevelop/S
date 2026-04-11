@@ -43,8 +43,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             children: [
               TextField(controller: titleController, decoration: const InputDecoration(labelText: 'Title')),
               TextField(controller: categoryController, decoration: const InputDecoration(labelText: 'Category (art, books, design)')),
-              TextField(controller: metadataController, decoration: const InputDecoration(labelText: 'Metadata Info')),
-              TextField(controller: descriptionController, decoration: const InputDecoration(labelText: 'Description'), maxLines: 3),
+              TextField(controller: metadataController, decoration: const InputDecoration(labelText: 'Metadata Info'), maxLines: 3),
+              TextField(controller: descriptionController, decoration: const InputDecoration(labelText: 'Description'), maxLines: 5),
               TextField(controller: imagesController, decoration: const InputDecoration(labelText: 'Image URLs (one per line)'), maxLines: 5),
               TextField(controller: sortOrderController, decoration: const InputDecoration(labelText: 'Sort Order'), keyboardType: TextInputType.number),
             ],
