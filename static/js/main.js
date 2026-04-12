@@ -24,11 +24,6 @@ $(document).ready(function () {
     initApp();
 
     // --- 2. DATA FETCHING ---
-    function formatParagraphs(text) {
-        if (!text) return "";
-        return text.split(/\r?\n/).map(p => p.trim() === "" ? "<br>" : `<p>${p}</p>`).join("");
-    }
-
     async function fetchProfile() {
         const { data, error } = await _supabase
             .from('profile')
@@ -37,8 +32,8 @@ $(document).ready(function () {
 
         if (data) {
             $('#about-img').attr('src', data.about_image_url);
-            $('#about-intro').html(formatParagraphs(data.about_text_intro));
-            $('#about-more-span').html(formatParagraphs(data.about_text_more));
+            $('#about-intro').text(data.about_text_intro);
+            $('#about-more-span').text(data.about_text_more);
             $('#contact-email').attr('href', 'mailto:' + data.email).text(data.email);
             $('#contact-insta').attr('href', data.instagram_url).text(data.instagram_handle);
         }
@@ -116,10 +111,10 @@ $(document).ready(function () {
         // Update Text Content
         $('#text-title, #display-title-mobile').text(project.title);
         $('#display-num').text((index + 1).toString().padStart(2, '0'));
-        $('#display-desc').html(formatParagraphs(project.description));
+        $('#display-desc').text(project.description);
 
         // Update Metadata
-        $('.metadata').html(formatParagraphs(project.metadata_info));
+        $('.metadata').text(project.metadata_info);
 
         // Reset view to show the first image
         showImage(0);
