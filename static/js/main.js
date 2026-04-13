@@ -71,21 +71,25 @@ $(document).ready(function () {
 
     async function checkCategoriesAvailability() {
         const categories = ['art', 'books', 'design'];
-        for (const cat of categories) {
-            const { count, error } = await _supabase
+        const checks = categories.map(cat =>
+            _supabase
                 .from('projects')
                 .select('*', { count: 'exact', head: true })
-                .eq('category', cat);
+                .eq('category', cat)
+        );
 
-            if (count === 0) {
-                // Disable the trigger
+        const results = await Promise.all(checks);
+
+        results.forEach((res, index) => {
+            if (res.count === 0) {
+                const cat = categories[index];
                 $(`.category-trigger[data-category="${cat}"]`).addClass('disabled').css({
                     'opacity': '0.3',
                     'pointer-events': 'none',
                     'cursor': 'default'
                 });
             }
-        }
+        });
     }
 
     async function fetchProjects(category) {
