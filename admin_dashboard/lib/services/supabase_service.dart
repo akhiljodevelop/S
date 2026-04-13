@@ -1,3 +1,4 @@
+import 'dart:typed_data';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/project.dart';
 import '../models/press_item.dart';
@@ -54,9 +55,9 @@ class SupabaseService {
   }
 
   // Storage
-  Future<String> uploadImage(String fileName, List<int> bytes) async {
+  Future<String> uploadImage(String fileName, Uint8List bytes) async {
     final path = 'public/$fileName';
-    await _supabase.storage.from('portfolio-images').uploadBinary(path, bytes as List<int>);
+    await _supabase.storage.from('portfolio-images').uploadBinary(path, bytes);
     return _supabase.storage.from('portfolio-images').getPublicUrl(path);
   }
 }
