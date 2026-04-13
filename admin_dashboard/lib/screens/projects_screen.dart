@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
 import '../models/project.dart';
 import '../services/supabase_service.dart';
 
@@ -35,42 +36,69 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
 
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text(project == null ? 'Add Project' : 'Edit Project'),
-        content: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(controller: titleController, decoration: const InputDecoration(labelText: 'Title')),
-              TextField(controller: categoryController, decoration: const InputDecoration(labelText: 'Category (art, books, design)')),
-              TextField(controller: metadataController, decoration: const InputDecoration(labelText: 'Metadata Info'), maxLines: 3),
-              TextField(controller: descriptionController, decoration: const InputDecoration(labelText: 'Description'), maxLines: 5),
-              TextField(controller: imagesController, decoration: const InputDecoration(labelText: 'Image URLs (one per line)'), maxLines: 5),
-              TextField(controller: sortOrderController, decoration: const InputDecoration(labelText: 'Sort Order'), keyboardType: TextInputType.number),
-            ],
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: Text(project == null ? 'Add Project' : 'Edit Project'),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(controller: titleController, decoration: const InputDecoration(labelText: 'Title')),
+                TextField(controller: categoryController, decoration: const InputDecoration(labelText: 'Category (art, books, design)')),
+                TextField(controller: metadataController, decoration: const InputDecoration(labelText: 'Metadata Info'), maxLines: 3),
+                TextField(controller: descriptionController, decoration: const InputDecoration(labelText: 'Description'), maxLines: 5),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text('Images', style: TextStyle(fontWeight: FontWeight.bold)),
+                    ElevatedButton.icon(
+                      onPressed: () async {
+                        final result = await FilePicker.platform.pickFiles(type: FileType.image);
+                        if (result != null && result.files.single.bytes != null) {
+                          final fileName = '${DateTime.now().millisecondsSinceEpoch}_${result.files.single.name}';
+                          final url = await _supabaseService.uploadImage(fileName, result.files.single.bytes!);
+                          setDialogState(() {
+                            if (imagesController.text.isEmpty) {
+                              imagesController.text = url;
+                            } else {
+                              imagesController.text += '\n$url';
+                            }
+                          });
+                        }
+                      },
+                      icon: const Icon(Icons.upload),
+                      label: const Text('Upload'),
+                    ),
+                  ],
+                ),
+                TextField(controller: imagesController, decoration: const InputDecoration(labelText: 'Image URLs (one per line)'), maxLines: 5),
+                TextField(controller: sortOrderController, decoration: const InputDecoration(labelText: 'Sort Order'), keyboardType: TextInputType.number),
+              ],
+            ),
           ),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+            ElevatedButton(
+              onPressed: () async {
+                final newProject = Project(
+                  id: project?.id,
+                  title: titleController.text,
+                  category: categoryController.text,
+                  metadataInfo: metadataController.text,
+                  description: descriptionController.text,
+                  images: imagesController.text.split('\n').where((s) => s.isNotEmpty).toList(),
+                  sortOrder: int.tryParse(sortOrderController.text) ?? 0,
+                );
+                await _supabaseService.upsertProject(newProject);
+                if (!context.mounted) return;
+                Navigator.pop(context);
+                _refreshProjects();
+              },
+              child: const Text('Save'),
+            ),
+          ],
         ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
-          ElevatedButton(
-            onPressed: () async {
-              final newProject = Project(
-                id: project?.id,
-                title: titleController.text,
-                category: categoryController.text,
-                metadataInfo: metadataController.text,
-                description: descriptionController.text,
-                images: imagesController.text.split('\n').where((s) => s.isNotEmpty).toList(),
-                sortOrder: int.tryParse(sortOrderController.text) ?? 0,
-              );
-              await _supabaseService.upsertProject(newProject);
-              if (!context.mounted) return;
-              Navigator.pop(context);
-              _refreshProjects();
-            },
-            child: const Text('Save'),
-          ),
-        ],
       ),
     );
   }

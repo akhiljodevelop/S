@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
 import '../models/profile.dart';
 import '../services/supabase_service.dart';
 
@@ -82,7 +83,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(height: 16),
               TextField(controller: _introController, decoration: const InputDecoration(labelText: 'Intro Text'), maxLines: 4),
               TextField(controller: _moreController, decoration: const InputDecoration(labelText: 'More About Text'), maxLines: 8),
-              TextField(controller: _imageController, decoration: const InputDecoration(labelText: 'About Image URL')),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(child: TextField(controller: _imageController, decoration: const InputDecoration(labelText: 'About Image URL'))),
+                  const SizedBox(width: 8),
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      final result = await FilePicker.platform.pickFiles(type: FileType.image);
+                      if (result != null && result.files.single.bytes != null) {
+                        final fileName = 'profile_${DateTime.now().millisecondsSinceEpoch}_${result.files.single.name}';
+                        final url = await _supabaseService.uploadImage(fileName, result.files.single.bytes!);
+                        setState(() {
+                          _imageController.text = url;
+                        });
+                      }
+                    },
+                    icon: const Icon(Icons.upload),
+                    label: const Text('Upload'),
+                  ),
+                ],
+              ),
               const SizedBox(height: 32),
               const Text('Contact & Social', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
