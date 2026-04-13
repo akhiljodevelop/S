@@ -574,7 +574,7 @@ video:active {
     #gallery-text-content {
         margin-top: 0 !important;
         padding-top: 20px;
-        height: calc(100vh - 460px);
+        height: calc(100vh - 500px);
         overflow-y: auto;
     }
 }
