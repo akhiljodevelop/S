@@ -25,8 +25,8 @@ $(document).ready(function () {
 
     // --- 2. DATA FETCHING ---
     function formatParagraphs(text) {
-        if (!text) return "";
-        return text.split(/\r?\n/).map(p => p.trim() === "" ? "<br>" : `<p>${p}</p>`).join("");
+        if (!text) return '';
+        return text.split(/\r?\n/).filter(p => p.trim() !== '').map(p => `<p>${p}</p>`).join('');
     }
 
     async function fetchProfile() {
