@@ -405,7 +405,7 @@ video:active {
 
 #gallery-text-content {
     margin-top: 10rem;
-    height: calc(100vh - 340px);
+    height: calc(100vh - 500px);
     overflow-y: auto;
 }
 
