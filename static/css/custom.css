@@ -10,8 +10,9 @@ html,
 body {
     height: 100%;
     max-width: 100%;
-    overflow-x: hidden !important;
-    overflow-y: hidden !important;
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
     font-family: "Host Grotesk", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -53,7 +54,8 @@ button {
 
 .main-video {
     width: 100%;
-    height: calc(100vh - 135px);
+    height: calc(100vh - 180px);
+    object-fit: cover;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
@@ -272,11 +274,10 @@ video:active {
 
 @media (max-width: 768px) {
     .contact-card {
-        width: calc(100% - 40px);
+        width: 100% !important;
         top: 0px;
         right: 0px;
-        height: 240px;
-        width: 450px;
+        height: auto;
     }
 
     .nav-mobile-view {
