@@ -52,4 +52,11 @@ class SupabaseService {
   Future<void> updateProfile(Profile profile) async {
     await _supabase.from('profile').upsert(profile.toJson());
   }
+
+  // Storage
+  Future<String> uploadImage(String fileName, List<int> bytes) async {
+    final path = 'public/$fileName';
+    await _supabase.storage.from('portfolio-images').uploadBinary(path, bytes as List<int>);
+    return _supabase.storage.from('portfolio-images').getPublicUrl(path);
+  }
 }

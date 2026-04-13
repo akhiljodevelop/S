@@ -13,6 +13,7 @@ $(document).ready(function () {
     async function initApp() {
         await fetchProfile();
         await fetchPress();
+        await checkCategoriesAvailability();
 
         setTimeout(function () {
             $('#loader').fadeOut(800, function () {
@@ -65,6 +66,25 @@ $(document).ready(function () {
                 </a>
             `).join('');
             $('#press-list').html(pressHtml);
+        }
+    }
+
+    async function checkCategoriesAvailability() {
+        const categories = ['art', 'books', 'design'];
+        for (const cat of categories) {
+            const { count, error } = await _supabase
+                .from('projects')
+                .select('*', { count: 'exact', head: true })
+                .eq('category', cat);
+
+            if (count === 0) {
+                // Disable the trigger
+                $(`.category-trigger[data-category="${cat}"]`).addClass('disabled').css({
+                    'opacity': '0.3',
+                    'pointer-events': 'none',
+                    'cursor': 'default'
+                });
+            }
         }
     }
 
@@ -150,6 +170,8 @@ $(document).ready(function () {
     // --- 4. NAVIGATION ---
     $('.category-trigger').on('click', function (e) {
         e.preventDefault();
+        if ($(this).hasClass('disabled')) return;
+
         const category = $(this).data('category');
 
         $('.category-trigger').removeClass('fw-bold');
