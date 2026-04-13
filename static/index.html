@@ -17,7 +17,7 @@
     <!-- 1. LOADER SCREEN -->
     <div id="loader">
         <div class="center-container w-100 h-100">
-            <video autoplay muted loop playsinline class="w-100 h-100" style="object-fit: cover;">
+            <video autoplay muted loop playsinline class="main-video">
                 <source src="image/loader.mp4" type="video/mp4">
             </video>
         </div>
@@ -32,9 +32,9 @@
             </div>
 
             <div class="d-flex justify-content-between align-items-center nav-mobile-view p-4">
-                <div class="nav-item fw-bold brand-logo" id="go-home">s</div>
+                <div class="nav-item fw-bold brand-logo" id="go-home-mobile">s</div>
                 <div class="nav-mobile-view-sec">
-                    <div class="nav-item"><a href="#" id="open-about">about</a></div>
+                    <div class="nav-item"><a href="#" id="open-about-mobile">about</a></div>
                     <div class="nav-item"><a href="#" class="open-contact-btn">contact</a></div>
                 </div>
             </div>
@@ -45,10 +45,10 @@
                         <source src="image/loader.mp4" type="video/mp4">
                     </video>
                 </div>
-
+                
                 <!-- ART GALLERY VIEW -->
                 <div id="gallery-view" class="container-fluid d-none">
-                    <div class="row h-100">
+                    <div class="row h-100 p-4">
                         <div class="col-md-3 no-padding-left pt-md-5" id="mobile-list-container">
                             <ul class="gallery-list list-unstyled" id="gallery-items-list">
                                 <!-- Dynamic Projects Load Here -->
@@ -68,7 +68,7 @@
 
                             <div class="display-box w-100">
                                 <div class="bg-gray-box">
-                                    <img src="" alt="Artwork" class="img-fluid d-none" id="main-gallery-img">
+                                    <img src="" alt="Artwork" class="art-img d-none" id="main-gallery-img">
                                     <div id="gallery-text-content" class="d-none text-start p-2">
                                         <h4 class="fw-bold text-uppercase mb-4 d-none-mobile-text" id="text-title">
                                             PROJECT TITLE</h4>
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <div class="row align-items-end pb-4 w-100 m-0">
+            <div class="row align-items-end pb-4 w-100 m-0 bottom-nav-row">
                 <div class="col-md-4 d-none d-md-block"></div>
                 <div class="col-12 col-md-4 d-flex justify-content-center gap-4 mb-3 mb-md-0">
                     <div class="nav-item"><a href="#" id="show-art" class="category-trigger" data-category="art">art</a></div>
