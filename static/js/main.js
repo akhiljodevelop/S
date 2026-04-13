@@ -15,10 +15,9 @@ $(document).ready(function () {
         await fetchPress();
         await checkCategoriesAvailability();
 
-        setTimeout(function () {
-            $('#loader').fadeOut(800, function () {
-                $('#main-content').removeClass('d-none').addClass('fade-in');
-            });
+         setTimeout(function () {
+            $('#loader').fadeOut(800);
+            $('#main-content').removeClass('d-none').addClass('fade-in');
         }, 3000);
     }
 
