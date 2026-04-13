@@ -425,7 +425,7 @@ video:active {
 
     .display-box img {
         width: 100%;
-        height: calc(100vh - 200px);
+        height: 400px;
         overflow-y: auto;
         object-fit: cover;
     }
@@ -456,7 +456,7 @@ video:active {
     #gallery-text-content {
         margin-top: 0 !important;
         padding-top: 20px;
-         height: calc(100vh - 400px);
+         height: 300px;
          overflow-y: auto;
     }
 
@@ -537,10 +537,6 @@ video:active {
 
     #contact-mobile-text {
         display: none !important;
-    }
-
-    #gallery-view {
-        margin-top: 2rem;
     }
 
     .bg-gray-box {
