@@ -570,6 +570,27 @@ video:active {
         line-height: 24px;
         letter-spacing: 1px;
     }
+
+    .contact-link {
+        font-size: 16px;
+    }
+
+    .read-more-btn {
+        font-size: 14px;
+    }
+
+    .press-header {
+        font-size: 18px;
+    }
+
+    .press-source {
+        font-size: 18px;
+    }
+
+    .press-content {
+        font-size: 14px;
+        line-height: 24px;
+    }
 }
 
 
