@@ -425,7 +425,7 @@ video:active {
 
     .display-box img {
         width: 100%;
-        height: 550px;
+          height: calc(100vh - 700px);
         object-fit: cover;
     }
 
