@@ -564,3 +564,15 @@ video:active {
         padding-bottom: 70px;
     }
 }
+
+@media (max-width: 450px) {
+    .display-box img {
+        height: calc(100vh - 500px);
+    }
+        #gallery-text-content {
+        margin-top: 0 !important;
+        padding-top: 20px;
+          height: calc(100vh - 850px);
+        overflow-y: auto;
+    }
+}
