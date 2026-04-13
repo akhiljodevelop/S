@@ -45,15 +45,47 @@ button {
     z-index: 9999;
 }
 
+@media (max-width: 768px) {
+    #loader .center-container {
+        overflow: hidden !important;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 60px;
+    }
+
+    #loader .center-container video {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
 .main-video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: calc(100vh - 180px);
-    object-fit: cover;
+    height: auto;
+    max-height: calc(100vh - 180px);
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-    display: block;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+#home-view {
+    overflow: hidden;
 }
 
 video:focus,
@@ -383,12 +415,18 @@ video:active {
 
 @media (max-width: 768px) {
     .main-video {
-        height: 60vh !important;
-        transform: scale(1.5);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        object-fit: cover;
     }
 
     .display-box img {
-        height: auto !important;
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
     }
 
     .d-none-mobile {
@@ -504,5 +542,26 @@ video:active {
 
     .bg-gray-box {
         margin-top: 3rem;
+    }
+
+    .bottom-nav-row {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: #fff;
+        padding: 12px 0 20px 0 !important;
+        margin: 0 !important;
+    }
+
+    .bottom-nav-row .col-12 {
+        gap: 16px !important;
+        flex-wrap: nowrap;
+    }
+
+    .flex-grow-1 {
+        min-height: 0;
+        padding-bottom: 70px;
     }
 }
