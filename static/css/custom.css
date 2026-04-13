@@ -68,10 +68,6 @@ button {
 }
 
 .main-video {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
     height: auto;
     max-height: calc(100vh - 180px);
@@ -565,16 +561,20 @@ video:active {
     }
 }
 
-@media (max-width: 450px) {
+
+@media (max-width: 500px) {
 
     .display-box img {
         height: calc(100vh - 500px);
     }
 
     #gallery-text-content {
-        margin-top: 0 !important;
-        padding-top: 20px;
         height: calc(100vh - 500px);
-        overflow-y: auto;
+    }
+
+    .main-video {
+        left: 45%;
+        top: 45%;
+        width: 150%;
     }
 }
