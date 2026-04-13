@@ -55,8 +55,6 @@ button {
     }
 
     #loader .center-container video {
-        width: 100% !important;
-        max-width: 100% !important;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -116,7 +114,7 @@ video:active {
 }
 
 .fade-in {
-    animation: fadeInContent 1.2s ease forwards;
+    animation: fadeInContent 0.8s ease-out forwards;
 }
 
 @keyframes fadeInContent {
@@ -182,6 +180,7 @@ video:active {
     line-height: 28px;
     color: #000;
     font-weight: 300;
+    letter-spacing: 1px;
 }
 
 .read-more-btn {
@@ -366,7 +365,7 @@ video:active {
 
 .display-box img {
     width: 100%;
-    height: 550px;
+    height: calc(100vh - 340px);
     object-fit: cover;
 }
 
@@ -385,7 +384,7 @@ video:active {
 }
 
 #gallery-text-content .metadata p {
-    font-size: 0.9rem;
+    font-size: 16px;
     color: #333;
 }
 
@@ -406,6 +405,8 @@ video:active {
 
 #gallery-text-content {
     margin-top: 10rem;
+    height: calc(100vh - 340px);
+    overflow-y: auto;
 }
 
 .metadata {
@@ -559,6 +560,16 @@ video:active {
         min-height: 0;
         padding-bottom: 70px;
     }
+
+    .nav-item {
+        font-size: 16px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 1px;
+    }
 }
 
 
@@ -572,9 +583,19 @@ video:active {
         height: calc(100vh - 500px);
     }
 
+    #loader .center-container video {
+        width: 150%;
+        top: 50%;
+        left: 45%;
+    }
+
     .main-video {
         left: 45%;
         top: 45%;
         width: 150%;
+    }
+
+    .brand-logo {
+        font-size: 18px;
     }
 }
