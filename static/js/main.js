@@ -183,7 +183,7 @@ $(document).ready(function () {
         });
     });
 
-    $('#go-home').on('click', function () {
+    $('#go-home, #go-home-mobile').on('click', function () {
         $('#gallery-view').fadeOut(400, function () {
             $('#home-view').fadeIn(600);
         });
@@ -230,7 +230,7 @@ $(document).ready(function () {
         $('#panel-overlay').fadeIn(400);
     }
 
-    $('#open-about, #open-about-from-contact').on('click', function (e) {
+    $('#open-about, #open-about-from-contact, #open-about-mobile').on('click', function (e) {
         e.preventDefault();
         openAbout();
     });
