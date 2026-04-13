@@ -29,6 +29,11 @@ $(document).ready(function () {
         return text.split(/\r?\n/).filter(p => p.trim() !== '').map(p => `<p>${p}</p>`).join('');
     }
 
+    function formatMetadataParagraphs(text) {
+        if (!text) return '';
+        return text.split(/\r?\n/).filter(p => p.trim() !== '').map(p => `<p style="margin-bottom:2px;">${p}</p>`).join('');
+    }
+
     async function fetchProfile() {
         const { data, error } = await _supabase
             .from('profile')
@@ -119,7 +124,7 @@ $(document).ready(function () {
         $('#display-desc').html(formatParagraphs(project.description));
 
         // Update Metadata
-        $('.metadata').html(formatParagraphs(project.metadata_info));
+        $('.metadata').html(formatMetadataParagraphs(project.metadata_info));
 
         // Reset view to show the first image
         showImage(0);
