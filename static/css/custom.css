@@ -315,6 +315,10 @@ video:active {
     .contact-mobile-view {
         display: none;
     }
+
+    .p-4-mobile {
+        padding: 1.5rem;
+    }
 }
 
 .gallery-list {
@@ -344,7 +348,7 @@ video:active {
 }
 
 .gallery-item.active .g-title {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .g-num {
@@ -354,13 +358,10 @@ video:active {
 }
 
 .g-title {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.2;
     text-transform: lowercase;
-}
-
-.gallery-item.active .g-title {
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .display-box img {
@@ -443,6 +444,10 @@ video:active {
     .g-title {
         font-size: 14px;
         letter-spacing: 0.05em;
+    }
+
+    .g-num {
+        font-size: 14px;
     }
 
     .work-title-small {
