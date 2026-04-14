@@ -72,7 +72,7 @@ button {
     transform: translate(-50%, -50%);
     width: 100%;
     height: auto;
-    max-height: calc(100vh - 180px);
+    max-height: calc(100vh - 250px);
     object-fit: contain;
     display: block;
     margin: 0 auto;
@@ -93,13 +93,13 @@ video:active {
 }
 
 .nav-item {
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.05em;
     text-transform: lowercase;
 }
 
 .brand-logo {
-    font-size: 24px;
+    font-size: 22px;
     text-transform: lowercase;
 }
 
@@ -176,7 +176,7 @@ video:active {
 }
 
 .about-text p {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 28px;
     color: #000;
     font-weight: 300;
@@ -184,7 +184,7 @@ video:active {
 }
 
 .read-more-btn {
-    font-size: 16px;
+    font-size: 15px;
     color: #000;
     text-decoration: underline;
     font-weight: 500;
@@ -219,6 +219,7 @@ video:active {
 .press-header {
     margin-bottom: 45px;
     font-weight: 600;
+    font-size: 20px;
 }
 
 .press-item {
@@ -228,12 +229,12 @@ video:active {
 
 .press-source {
     color: #888;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 }
 
 .press-content {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 28px;
     color: #000;
     font-weight: 300;
@@ -252,7 +253,7 @@ video:active {
 }
 
 .contact-close-text {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .contact-email-row {
@@ -263,7 +264,7 @@ video:active {
 .contact-link {
     color: #000;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     transition: opacity 0.3s;
 }
@@ -274,12 +275,12 @@ video:active {
 }
 
 .contact-insta-row i {
-    font-size: 18px;
+    font-size: 16px;
     color: #000;
 }
 
 .contact-text {
-    font-size: 18px;
+    font-size: 16px;
     color: #000;
 }
 
@@ -352,13 +353,13 @@ video:active {
 }
 
 .g-num {
-    font-size: 16px;
+    font-size: 15px;
     margin-right: 15px;
     font-weight: 300;
 }
 
 .g-title {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.2;
     text-transform: lowercase;
     font-weight: 300;
@@ -371,7 +372,7 @@ video:active {
 }
 
 .display-footer {
-    font-size: 16px;
+    font-size: 14px;
     color: #000;
 }
 
@@ -380,17 +381,17 @@ video:active {
 }
 
 #gallery-text-content h4 {
-    font-size: 1.1rem;
+    font-size: 14px;
     letter-spacing: 1px;
 }
 
 #gallery-text-content .metadata p {
-    font-size: 16px;
+    font-size: 14px;
     color: #333;
 }
 
 #gallery-text-content .description-body {
-    font-size: 0.95rem;
+    font-size: 14px;
     line-height: 1.6;
     color: #000;
     font-weight: 300;
@@ -442,16 +443,16 @@ video:active {
     }
 
     .g-title {
-        font-size: 14px;
+        font-size: 13px;
         letter-spacing: 0.05em;
     }
 
     .g-num {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .work-title-small {
-        font-size: 13px;
+        font-size: 12px;
         letter-spacing: 1px;
     }
 
@@ -463,7 +464,7 @@ video:active {
     }
 
     .description-body {
-        font-size: 13px !important;
+        font-size: 12px !important;
         line-height: 1.8 !important;
     }
 
@@ -502,7 +503,7 @@ video:active {
     .contact-card {
         width: 100% !important;
         height: auto !important;
-        min-height: 220px;
+        min-height: 180px;
         top: -100% !important;
         bottom: auto !important;
         right: 0 !important;
@@ -557,7 +558,6 @@ video:active {
     }
 
     .bottom-nav-row .col-12 {
-        gap: 16px !important;
         flex-wrap: nowrap;
     }
 
@@ -567,7 +567,7 @@ video:active {
     }
 
     .nav-item {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .about-text p {
@@ -577,7 +577,7 @@ video:active {
     }
 
     .contact-link {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .read-more-btn {
@@ -585,16 +585,28 @@ video:active {
     }
 
     .press-header {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .press-source {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .press-content {
         font-size: 14px;
         line-height: 24px;
+    }
+
+    .contact-text {
+        font-size: 14px;
+    }
+
+    #open-about-from-contact {
+        font-size: 14px;
+    }
+
+    #close-contact {
+        font-size: 14px;
     }
 }
 
@@ -612,7 +624,7 @@ video:active {
     #loader .center-container video {
         width: 150%;
         top: 50%;
-        left: 45%;
+        left: 45%;https://github.com/akhiljodevelop/S/blob/main/static/css/custom.css
     }
 
     .main-video {
@@ -622,11 +634,22 @@ video:active {
     }
 
     .brand-logo {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
-.metadata a {
-    color: #0d6efd;
-    text-decoration: underline;
+#gallery-text-content::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #dfdfdf;
+}
+
+#gallery-text-content::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+#gallery-text-content::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(163, 163, 163, 0.3);
+    background-color: #b9b9b9;
 }
