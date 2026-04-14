@@ -15,17 +15,10 @@
 <body>
 
     <!-- 1. LOADER SCREEN -->
-    <div id="loader">
-        <div class="center-container w-100 h-100">
-            <video autoplay muted loop playsinline class="main-video">
-                <source src="image/loader.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
 
     <!-- 2. MAIN CONTENT -->
-    <div id="main-content" class="d-none">
-        <nav class="container-fluid vh-100 d-flex flex-column p-0 p-md-4 overflow-hidden">
+    <div id="main-content"> 
+    <nav class="container-fluid vh-100 d-flex flex-column p-0 p-md-4 overflow-hidden">
             <div class="d-flex justify-content-between align-items-start nav-web-view">
                 <div class="nav-item fw-bold brand-logo" id="go-home">s</div>
                 <div class="nav-item"><a href="#" id="open-about">about</a></div>
@@ -101,7 +94,7 @@
                     <div class="nav-item"><a href="#" id="show-books" class="category-trigger" data-category="books">books</a></div>
                     <div class="nav-item"><a href="#" id="show-design" class="category-trigger" data-category="design">design</a></div>
                 </div>
-                <div class="col-md-4 text-end d-none d-md-block">
+                <div class="col-md-4 text-end d-none d-md-block" style="padding-right: 0 !important;">
                     <div class="nav-item"><a href="#" class="open-contact-btn">contact</a></div>
                 </div>
             </div>
