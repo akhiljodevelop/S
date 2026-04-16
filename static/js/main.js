@@ -10,14 +10,15 @@ $(document).ready(function () {
     let allProjects = [];
 
     // --- 1. INITIALIZATION & LOADER ---
-    async function initApp() {
+  async function initApp() {
+        // Fetch your data in the background
         await fetchProfile();
         await fetchPress();
         await checkCategoriesAvailability();
 
-         setTimeout(function () {
-            $('#loader').fadeOut(800);
-            $('#main-content').removeClass('d-none').addClass('fade-in');
+        // 3-second timer to show the navigation
+        setTimeout(function () {
+            $('body').addClass('is-loaded');
         }, 3000);
     }
 
