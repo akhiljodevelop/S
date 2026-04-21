@@ -1,0 +1,248 @@
+@media (max-width: 768px) {
+    #loader .center-container {
+        overflow: hidden !important;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 60px;
+    }
+
+    #loader .center-container video {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .bg-gray-box {
+        height: calc(100vh - 400px);
+        margin-top: 0;
+    }
+
+    #gallery-text-content {
+        height: 100% !important;
+        margin-top: 0 !important;
+        padding-top: 10px;
+    }
+
+    .nav-mobile-view {
+        display: flex !important;
+    }
+
+    .nav-web-view {
+        display: none !important;
+    }
+
+    .contact-mobile-view {
+        display: none;
+    }
+
+    .p-4-mobile {
+        padding: 1.5rem;
+    }
+
+    .main-video {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .display-box img {
+        width: 100%;
+        height: calc(100vh - 400px);
+        overflow-y: auto;
+        object-fit: cover;
+    }
+
+    .d-none-mobile {
+        display: none !important;
+    }
+
+    #gallery-view .row {
+        margin-top: 20px;
+    }
+
+    .gallery-item {
+        margin-bottom: 20px;
+        opacity: 1;
+    }
+
+    .g-title {
+        font-size: 13px;
+        letter-spacing: 0.05em;
+    }
+
+    .g-num {
+        font-size: 13px;
+    }
+
+    .work-title-small {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .description-body {
+        font-size: 12px !important;
+        line-height: 1.8 !important;
+    }
+
+    .metadata p {
+        font-size: 12px !important;
+    }
+
+    .brand-logo {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .side-panel {
+        width: 80% !important;
+        right: 0 !important;
+        top: -100% !important;
+        transition: top 0.5s ease;
+        padding: 30px 40px !important;
+    }
+
+    .side-panel.open {
+        top: 0 !important;
+    }
+
+    .contact-card {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 180px;
+        top: -100% !important;
+        bottom: auto !important;
+        right: 0 !important;
+        padding: 30px 40px !important;
+        display: block !important;
+        visibility: hidden;
+        transition: top 0.5s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-card.open-mobile {
+        top: 0 !important;
+        visibility: visible;
+        width: 80% !important;
+    }
+
+    .panel-body {
+        padding: 0px;
+        margin-top: 70px;
+    }
+
+    #open-about-from-contact {
+        display: flex !important;
+    }
+
+    #contact-overlay-text {
+        display: flex !important;
+    }
+
+    .panel-header,
+    .contact-card .d-flex {
+        padding: 0px !important;
+    }
+
+    #contact-mobile-text {
+        display: none !important;
+    }
+
+    .bottom-nav-row {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: #fff;
+        padding: 12px 0 20px 0 !important;
+        margin: 0 !important;
+    }
+
+    .bottom-nav-row .col-12 {
+        flex-wrap: nowrap;
+    }
+
+    .flex-grow-1 {
+        min-height: 0;
+        padding-bottom: 70px;
+    }
+
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .about-text p {
+        font-size: 12px;
+        line-height: 24px;
+        letter-spacing: 1px;
+    }
+
+    .contact-link {
+        font-size: 14px;
+    }
+
+    .read-more-btn {
+        font-size: 12px;
+    }
+
+    .press-header {
+        font-size: 14px;
+    }
+
+    .press-source {
+        font-size: 14px;
+    }
+
+    .press-content {
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    .contact-text {
+        font-size: 14px;
+    }
+
+    #open-about-from-contact {
+        font-size: 14px;
+    }
+
+    #close-contact {
+        font-size: 14px;
+    }
+
+    .filter-bw {
+        max-width: 160px;
+        height: 190px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .display-box img {
+        height: calc(100vh - 500px);
+    }
+
+    #gallery-text-content {
+        height: calc(100vh - 500px);
+    }
+
+    #loader .center-container video {
+        width: 150%;
+        top: 50%;
+        left: 45%;
+    }
+
+    .main-video {
+        left: 45%;
+        top: 45%;
+        width: 150%;
+    }
+
+    .brand-logo {
+        font-size: 16px;
+    }
+}
