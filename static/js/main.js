@@ -8,22 +8,38 @@ $(document).ready(function () {
     let projectImages = []; // Array of images for the active project
     let currentImgIndex = 0; // Current image being viewed (0, 1, 2...)
     let allProjects = [];
-
+    let loadingTimer; // Variable to store the timeout
     // --- 1. INITIALIZATION & LOADER ---
-  async function initApp() {
+    async function initApp() {
         // Fetch your data in the background
         await fetchProfile();
         await fetchPress();
         await checkCategoriesAvailability();
 
-        // 3-second timer to show the navigation
-        setTimeout(function () {
-            $('body').addClass('is-loaded');
-        }, 3000);
+        // Start the 2-second timer
+        loadingTimer = setTimeout(finishLoading, 2000);
+
+        // Add "Click anywhere" to skip functionality
+        $(document).on('click.loaderSkip', function () {
+            finishLoading();
+        });
+    }
+
+    function finishLoading() {
+        // Prevent running multiple times if already loaded
+        if ($('body').hasClass('is-loaded')) return;
+
+        // 1. Clear the timer so it doesn't fire again
+        clearTimeout(loadingTimer);
+
+        // 2. Show the navigation/content
+        $('body').addClass('is-loaded');
+
+        // 3. Remove the click listener so normal clicks work again
+        $(document).off('click.loaderSkip');
     }
 
     initApp();
-
     // --- 2. DATA FETCHING ---
     function formatParagraphs(text) {
         if (!text) return '';
