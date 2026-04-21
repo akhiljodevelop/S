@@ -8,15 +8,16 @@
     <!-- Links -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/media-query.css">
     <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- 2. MAIN CONTENT -->
-    <div id="main-content"> 
-    <nav class="container-fluid vh-100 d-flex flex-column p-0 p-md-4 overflow-hidden">
+    <!-- 1. MAIN CONTENT -->
+    <div id="main-content">
+        <nav class="container-fluid vh-100 d-flex flex-column p-0 p-md-4 overflow-hidden">
             <div class="d-flex justify-content-between align-items-start nav-web-view">
                 <div class="nav-item fw-bold brand-logo" id="go-home">s</div>
                 <div class="nav-item"><a href="#" id="open-about">about</a></div>
@@ -36,7 +37,7 @@
                         <source src="image/loader.mp4" type="video/mp4">
                     </video>
                 </div>
-                
+
                 <!-- ART GALLERY VIEW -->
                 <div id="gallery-view" class="container-fluid d-none">
                     <div class="row h-100 p-4-mobile">
@@ -77,7 +78,8 @@
                                 <div class="footer-link" id="next-image" style="cursor: pointer;">
                                     <i class="fa-solid fa-arrow-right-long"></i>
                                 </div>
-                                <div class="footer-link text-lowercase" id="read-btn" style="cursor: pointer;font-size: 15px;">read
+                                <div class="footer-link text-lowercase" id="read-btn"
+                                    style="cursor: pointer;font-size: 15px;">read
                                 </div>
                             </div>
                         </div>
@@ -88,9 +90,12 @@
             <div class="row align-items-end pb-4 w-100 m-0 bottom-nav-row">
                 <div class="col-md-4 d-none d-md-block"></div>
                 <div class="col-12 col-md-4 d-flex justify-content-center gap-5 mb-3 mb-md-0">
-                    <div class="nav-item"><a href="#" id="show-art" class="category-trigger" data-category="art">art</a></div>
-                    <div class="nav-item"><a href="#" id="show-books" class="category-trigger" data-category="books">books</a></div>
-                    <div class="nav-item"><a href="#" id="show-design" class="category-trigger" data-category="design">design</a></div>
+                    <div class="nav-item"><a href="#" id="show-art" class="category-trigger" data-category="art">art</a>
+                    </div>
+                    <div class="nav-item"><a href="#" id="show-books" class="category-trigger"
+                            data-category="books">books</a></div>
+                    <div class="nav-item"><a href="#" id="show-design" class="category-trigger"
+                            data-category="design">design</a></div>
                 </div>
                 <div class="col-md-4 text-end d-none d-md-block" style="padding-right: 0 !important;">
                     <div class="nav-item"><a href="#" class="open-contact-btn">contact</a></div>
