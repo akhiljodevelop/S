@@ -79,8 +79,8 @@ video:active {
 }
 
 .brand-logo {
-    font-size: 22px;
-    text-transform: lowercase;
+       width: 100px;
+       cursor: pointer;
 }
 
 .nav-item a {
@@ -323,10 +323,6 @@ video:active {
 .display-footer {
     font-size: 14px;
     color: #000;
-}
-
-.brand-logo {
-    cursor: pointer;
 }
 
 #gallery-text-content h4 {
