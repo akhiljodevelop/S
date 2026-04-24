@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'projects_screen.dart';
 import 'press_screen.dart';
 import 'profile_screen.dart';
@@ -19,6 +20,10 @@ class _MainScreenState extends State<MainScreen> {
     const ProfileScreen(),
   ];
 
+  Future<void> _signOut() async {
+    await Supabase.instance.client.auth.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +37,17 @@ class _MainScreenState extends State<MainScreen> {
               });
             },
             labelType: NavigationRailLabelType.all,
+            leading: Column(
+              children: [
+                const SizedBox(height: 8),
+                IconButton(
+                  icon: const Icon(Icons.logout),
+                  onPressed: _signOut,
+                  tooltip: 'Logout',
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
             destinations: const [
               NavigationRailDestination(
                 icon: Icon(Icons.work_outline),
