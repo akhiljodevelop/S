@@ -377,7 +377,7 @@ video:active {
     height: calc(100vh - 340px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     overflow: hidden;
 }
 
